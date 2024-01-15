@@ -32,7 +32,7 @@ const studyRoutes_1 = __importDefault(require("./routes/studyRoutes"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const cors_1 = __importDefault(require("cors"));
 const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
-const CSS_URL = "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
+const CSS_URL = "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.6.2/swagger-ui.min.css";
 const swaggerDocument = __importStar(require("./swagger.json"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
