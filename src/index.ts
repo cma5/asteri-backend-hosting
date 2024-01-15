@@ -17,7 +17,7 @@ app.listen(port, () => {
 });
 
 app.use(cors());
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument, { customCss: CSS_URL }));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument, { customCssUrl: CSS_URL }));
 
 app.use(bodyParser.json());
 app.use(studyRoutes);

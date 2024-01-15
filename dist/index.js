@@ -41,6 +41,6 @@ app.listen(port, () => {
     console.log(`Server started at http://localhost:${port}`);
 });
 app.use((0, cors_1.default)());
-app.use("/api-docs", swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swaggerDocument, { customCss: CSS_URL }));
+app.use("/api-docs", swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swaggerDocument, { customCssUrl: CSS_URL }));
 app.use(body_parser_1.default.json());
 app.use(studyRoutes_1.default);
