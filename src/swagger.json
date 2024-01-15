@@ -11,7 +11,7 @@
       }
     ],
     "paths": {
-      "/search/": {
+      "/search": {
         "get": {
           "summary": "Studiensuche",
           "description": "Die Studiensuche ermöglicht, verfügbare Studienangebote mit verschiedenen GET-Parametern zu filtern. In der Regel ist dabei die Angabe mindestens eines Suchwortes (sw), Studienfeldes (sfe) oder eines Studienfachs (sfa) erforderlich. Eine Ausnahme von dieser Regel besteht beispielsweise darin, den Filter zum Studienmodell (smo) auf 5 (für Duales Studium) zu setzen.",
