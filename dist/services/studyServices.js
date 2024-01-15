@@ -66,8 +66,15 @@ function getPlaces(searchParams) {
             };
         }
         catch (error) {
-            console.log("unexpected error ", error);
-            throw new Error("An unexpected error occurred" + error.message);
+            if (error.message === "No results found")
+                return {
+                    items: [],
+                    maxErgebnisse: 0,
+                };
+            else {
+                console.log("unexpected error ", error);
+                throw new Error("An unexpected error occurred" + error.message);
+            }
         }
     });
 }

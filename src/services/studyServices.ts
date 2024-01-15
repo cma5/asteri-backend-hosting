@@ -71,7 +71,14 @@ export async function getPlaces(searchParams: any) {
       maxErgebnisse: data.maxErgebnisse,
     };
   } catch (error: any) {
-    console.log("unexpected error ", error);
-    throw new Error("An unexpected error occurred" + error.message);
+    if (error.message === "No results found")
+      return {
+        items: [],
+        maxErgebnisse: 0,
+      };
+    else {
+      console.log("unexpected error ", error);
+      throw new Error("An unexpected error occurred" + error.message);
+    }
   }
 }
