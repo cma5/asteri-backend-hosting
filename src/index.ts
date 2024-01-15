@@ -6,7 +6,6 @@ import cors from "cors";
 import swaggerUi from "swagger-ui-express";
 
 import * as swaggerDocument from "./swagger.json";
-const CSS_URL = "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
 dotenv.config();
 
 const app: Express = express();
@@ -17,9 +16,7 @@ app.listen(port, () => {
 });
 
 app.use(cors());
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup({
-  customCssUrl: CSS_URL })
-);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(bodyParser.json());
 app.use(studyRoutes);
