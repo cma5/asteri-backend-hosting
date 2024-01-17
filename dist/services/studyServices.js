@@ -26,6 +26,9 @@ function getPlaces(searchParams) {
             if (!data.maxErgebnisse) {
                 throw new Error("No results found");
             }
+            if (data.maxErgebnisse > 750) {
+                throw new Error("Please narrow down your search");
+            }
             const numberOfRequests = Math.ceil(data.maxErgebnisse / 20);
             const requests = [];
             if (numberOfRequests > 1) {
@@ -71,9 +74,14 @@ function getPlaces(searchParams) {
                     items: [],
                     maxErgebnisse: 0,
                 };
+            else if (error.message === "Please narrow down your search")
+                return {
+                    items: [],
+                    maxErgebnisse: 751,
+                };
             else {
                 console.log("unexpected error ", error);
-                throw new Error("An unexpected error occurred" + error.message);
+                throw new Error("An unexpected error occurred. " + error.message);
             }
         }
     });
